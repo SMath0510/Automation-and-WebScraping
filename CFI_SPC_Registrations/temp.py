@@ -7,14 +7,14 @@ def launchBrowser():
    driver = webdriver.Chrome()
    CCCpath = f'file:///C:/Users/Admin/Desktop/Projects/Automation%20&%20Hashing/CFI_SPC_Registrations/Centre%20For%20Innovation%20_%20IIT%20Madras%20CCC.mhtml'
    CCpath = f'file:///C:/Users/Admin/Desktop/Projects/Automation%20&%20Hashing/CFI_SPC_Registrations/Centre%20For%20Innovation%20_%20IIT%20Madras%20CC.mhtml'
-   driver.get(CCpath)  # Replace with the URL of the login page
+   driver.get(CCCpath)  # Replace with the URL of the login page
 
    print("Here")
    names = []
    emails = []
    numbers = []
     
-   for i in range(1, 1733):
+   for i in range(1, 2830):
       path_name = "/html/body/div/div/div[1]/div[3]/div[3]/table/tbody/tr[" + str(i) + "]/th[2]"
       path_mail = "/html/body/div/div/div[1]/div[3]/div[3]/table/tbody/tr[" + str(i) + "]/th[3]"
       path_contact = "/html/body/div/div/div[1]/div[3]/div[3]/table/tbody/tr[" + str(i) + "]/th[5]"
@@ -30,8 +30,8 @@ def launchBrowser():
    # Select the active sheet (first sheet by default)
    sheet = workbook.active
 
-   for i in range(1, 1733):
-      name = 'A' + str(i) + "Code-Craft Participant"
+   for i in range(1, 2830):
+      name = 'A' + str(i)
       email = 'B' + str(i)
       contact = 'C' + str(i)
       sheet[name] = names[i-1]
@@ -40,7 +40,7 @@ def launchBrowser():
 
    # Save the workbook
    print("Done 2")
-   workbook.save("cc_registration_details.xlsx")
+   workbook.save("ccc_registration_details.xlsx")
    while(True):
        pass
 
